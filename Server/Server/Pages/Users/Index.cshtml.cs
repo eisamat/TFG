@@ -6,13 +6,13 @@ using Server.Services;
 
 namespace Server.Pages.Users
 {
-    public class UsersModel : PageModel
+    public class UserListModel : PageModel
     {
-        private readonly ILogger<UsersModel> _logger;
+        private readonly ILogger<UserListModel> _logger;
         private readonly IUserService _userService;
         public IList<UserDto> Users { get; set; }
 
-        public UsersModel(IUserService userService, ILogger<UsersModel> logger)
+        public UserListModel(IUserService userService, ILogger<UserListModel> logger)
         {
             _userService = userService;
             _logger = logger;

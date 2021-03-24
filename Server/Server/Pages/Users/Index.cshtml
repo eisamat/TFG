@@ -1,13 +1,13 @@
 ﻿@page
-@model UsersModel
+@model UserListModel
 @{
     ViewData["Title"] = "Users";
 }
 <h1>@ViewData["Title"]</h1>
-
-
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
 <table class="table">
-
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Users[0].Id)</th>

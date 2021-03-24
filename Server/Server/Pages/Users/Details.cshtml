@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model DetailsModel
+@model UserDetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -11,36 +11,16 @@
     <h4>User</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserDetails.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserDetails.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserDetails.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserDetails.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserDetails.Nhc)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserDetails.Nhc)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserDetails.Token)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserDetails.Token)
-        </dd>
-        <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.UserDetails.Zip)
-                </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserDetails.Zip)
-        </dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserDetails.Id)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserDetails.Id)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserDetails.Name)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserDetails.Name)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserDetails.Nhc)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserDetails.Nhc)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserDetails.Token)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserDetails.Token)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.UserDetails.Zip)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserDetails.Zip)</dd>
     </dl>
 </div>
 <div>

@@ -11,7 +11,6 @@ namespace Server.Services
     public class CreateUserDto
     {
         public string Nhc { get; set; }
-        
         public string Zip { get; set; }
     }
 
@@ -23,7 +22,7 @@ namespace Server.Services
         public string Token { get; set; }
         public string Name { get; set; }
     }
-    
+
     public interface IUserService
     {
         Task<User> CreateNewUser(CreateUserDto dto);
@@ -82,7 +81,7 @@ namespace Server.Services
             return dbUsers.Select(u =>  new UserDto
             {
                 Id = u.Id,
-                Name = u.Nhc,
+                Name = u.Name,
                 Nhc = u.Nhc,
                 Token = u.Token,
                 Zip = u.Zip
@@ -96,7 +95,7 @@ namespace Server.Services
             return new UserDto
             {
                 Id = u.Id,
-                Name = u.Nhc,
+                Name = u.Name,
                 Nhc = u.Nhc,
                 Token = u.Token,
                 Zip = u.Zip

@@ -6,12 +6,12 @@ using Server.Services;
 
 namespace Server.Pages.Users
 {
-    public class DetailsModel : PageModel
+    public class UserDetailsModel : PageModel
     {
-        private readonly ILogger<DetailsModel> _logger;
+        private readonly ILogger<UserDetailsModel> _logger;
         private readonly IUserService _userService;
 
-        public DetailsModel(ILogger<DetailsModel> logger, IUserService userService)
+        public UserDetailsModel(ILogger<UserDetailsModel> logger, IUserService userService)
         {
             _logger = logger;
             _userService = userService;
