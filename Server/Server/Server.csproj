@@ -5,7 +5,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+      <PackageReference Include="Grpc.AspNetCore" Version="2.36.0" />
       <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,6 +19,31 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Users\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>

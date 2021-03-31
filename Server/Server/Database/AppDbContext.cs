@@ -10,6 +10,18 @@ namespace Server.Database
             
         }
 
-        public DbSet<User> Users { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Patient>()
+                .HasIndex(u => u.Nhc)
+                .IsUnique();
+
+            modelBuilder.Entity<Patient>()
+                .HasIndex(u => u.Token)
+                .IsUnique();
+        }
+
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Therapist> Therapists { get; set; }
     }
 }

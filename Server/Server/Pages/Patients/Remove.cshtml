@@ -1,0 +1,35 @@
+﻿@page "{id:guid}"
+@model Pages.Patients.RemovePatientModel
+
+@{
+    ViewData["Title"] = "Eliminar usuari";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+         <div>
+            <a asp-page="List">Tornar enrere</a>
+        </div>
+        <div class="col-md-4">
+             <form method="post">
+                 <div class="mb-3">
+                     <label for="username" class="form-label">Nom</label>
+                     <input type="text" class="form-control" id="username" asp-for="Model.Name" disabled readonly>
+                 </div>
+                 <div class="mb-3">
+                     <label for="nhc" class="form-label">Nhc</label>
+                     <input type="text" class="form-control" id="nhc" asp-for="Model.Nhc" disabled readonly>
+                 </div>
+                 <div class="mb-3">
+                     <label for="zip" class="form-label">Zip</label>
+                     <input type="text" class="form-control" id="zip" asp-for="Model.Zip" disabled readonly>
+                 </div>
+                 <input type="hidden" asp-for="Model.Id" />
+                 <div class="mb-3">
+                     <input type="submit" value="Eliminar" class="btn btn-danger" />
+                 </div>
+             </form>
+        </div>
+    </div>
+</div>

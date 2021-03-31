@@ -1,0 +1,36 @@
+﻿@page
+@model Pages.Patients.PatientListModel
+@{
+    ViewData["Title"] = "Llista d'usuaris";
+    ViewData["string_new_user"] = "Afegir nou usuari";
+    ViewData["string_delete_user"] = "Eliminar";
+    ViewData["string_details_user"] = "Detalls";
+}
+<h1>@ViewData["Title"]</h1>
+<a asp-page="Add"><input class="btn btn-primary" value="@ViewData["string_new_user"]"/></a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Patients[0].Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Patients[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Patients[0].Nhc)</th>
+            <th>@Html.DisplayNameFor(model => model.Patients[0].Zip)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Patients)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => user.Id)</td>
+                <td>@Html.DisplayFor(modelItem => user.Name)</td>
+                <td>@Html.DisplayFor(modelItem => user.Nhc)</td>
+                <td>@Html.DisplayFor(modelItem => user.Zip)</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@user.Id">@ViewData["string_details_user"]</a> |
+                    <a asp-page="./Remove" asp-route-id="@user.Id">@ViewData["string_delete_user"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

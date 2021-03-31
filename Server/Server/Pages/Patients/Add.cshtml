@@ -1,0 +1,29 @@
+﻿@page
+@model Pages.Patients.AddPatientModel
+
+@{
+    ViewData["Title"] = "Afegir un nou usuari";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+        <div><a asp-page="List">Llista d'usuaris</a></div>
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label for="nhc" class="form-label">Nhc</label>
+                    <input type="text" class="form-control" id="nhc" asp-for="Model.Nhc">
+                </div>
+                <div class="mb-3">
+                    <label for="zip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="zip" asp-for="Model.Zip">
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Guardar canvis" asp-page-handler="SaveChanges">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
