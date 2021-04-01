@@ -2,7 +2,7 @@
 
 namespace Server.Models
 {
-    public class AddPatientDto
+    public class AddPatientViewModel
     {
         [Required]
         public string Nhc { get; set; }

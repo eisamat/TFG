@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +8,6 @@ namespace Server.Services
     public interface ITokenService
     {
         Task<string> GenerateToken();
-
     }
 
     internal class TokenService : ITokenService

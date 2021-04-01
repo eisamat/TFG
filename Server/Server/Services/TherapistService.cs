@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Server.Database;
@@ -8,11 +9,10 @@ namespace Server.Services
 {
     public interface ITherapistService
     {
-        Task<Therapist> GetTherapist(string id);
-
-        Task<Therapist> Authenticate(string username, string password);
+        Task<Therapist> ValidateCredentials(string username, string password);
         
-        Task<Therapist> AddTherapist(string fullname, string username, string password);
+        Task<Therapist> Get(string id);
+        Task<Therapist> Add(string fullname, string username, string password);
     }
     
     public class TherapistService: ITherapistService
@@ -23,19 +23,13 @@ namespace Server.Services
         {
             _appDbContext = appDbContext;
         }
-
-        public async Task<Therapist> GetTherapist(string id)
+        
+        public async Task<Therapist> ValidateCredentials(string username, string password)
         {
             var therapist = await _appDbContext
                 .Therapists
-                .FirstOrDefaultAsync(t=> t.Id.ToString() == id);
-
-            return therapist;
-        }
-
-        public async Task<Therapist> Authenticate(string username, string password)
-        {
-            var therapist = await _appDbContext.Therapists.FirstOrDefaultAsync(t => t.Username == username);
+                .Where(t => t.Username == username)
+                .FirstOrDefaultAsync();
                 
             if (therapist == null)
             {
@@ -52,7 +46,15 @@ namespace Server.Services
             return therapist;
         }
 
-        public async Task<Therapist> AddTherapist(string fullname, string username, string password)
+        public async Task<Therapist> Get(string id)
+        {
+            return await _appDbContext
+                .Therapists
+                .Where(t => t.Id == Guid.Parse(id))
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<Therapist> Add(string fullname, string username, string password)
         {
             if (await _appDbContext.Therapists.AnyAsync(t => t.Username == username))
             {

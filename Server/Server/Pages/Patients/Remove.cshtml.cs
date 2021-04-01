@@ -1,25 +1,24 @@
 ﻿using System.Threading.Tasks;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Server.Identity;
 using Server.Models;
 using Server.Services;
+using Server.Services.Identity;
 
 namespace Server.Pages.Patients
 {
     [Authorize(AuthenticationSchemes=BasicAuthenticationDefaults.AuthenticationScheme)]
     public class RemovePatientModel : PageModel
     {
-        public PatientDto Model { get; set; }
+        public PatientViewModel Model { get; set; }
         
-        private readonly ILogger<RemovePatientModel> _logger;
         private readonly IPatientService _patientService;
 
-        public RemovePatientModel(ILogger<RemovePatientModel> logger, IPatientService patientService)
+        public RemovePatientModel(IPatientService patientService)
         {
-            _logger = logger;
             _patientService = patientService;
         }
 
@@ -30,7 +29,7 @@ namespace Server.Pages.Patients
                 return NotFound();
             }
             
-            Model = await _patientService.GetPatient(id);
+            Model = (await _patientService.GetById(id)).Adapt<PatientViewModel>();
 
             if (User == null)
             {
@@ -47,7 +46,7 @@ namespace Server.Pages.Patients
                 return NotFound();
             }
 
-            await _patientService.RemovePatient(id);
+            await _patientService.Remove(id);
             
             return RedirectToPage("./List");
         }

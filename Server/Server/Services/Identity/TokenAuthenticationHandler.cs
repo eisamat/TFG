@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Server.Database.Models;
-using Server.Services;
 
-namespace Server.Identity
+namespace Server.Services.Identity
 {
     public static class TokenAuthenticationDefaults
     {
@@ -48,10 +47,11 @@ namespace Server.Identity
             
             // Only patients are allowed to token authentication for now.
             Patient patient;
+            
             try
             {
                 var token = TokenHeaderRegex.Replace(authorizationHeader, "$1");
-                patient = await _patientService.GetPatientByToken(token);
+                patient = await _patientService.GetByToken(token);
             }
             catch
             {

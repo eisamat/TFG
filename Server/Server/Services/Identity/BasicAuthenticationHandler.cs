@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Server.Database.Models;
-using Server.Services;
 
-namespace Server.Identity
+namespace Server.Services.Identity
 {
     public static class BasicAuthenticationDefaults
     {
@@ -48,7 +47,7 @@ namespace Server.Identity
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
                 var username = credentials[0];
                 var password = credentials[1];
-                therapist = await _therapistService.Authenticate(username, password);
+                therapist = await _therapistService.ValidateCredentials(username, password);
             }
             catch
             {

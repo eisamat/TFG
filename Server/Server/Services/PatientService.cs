@@ -11,13 +11,13 @@ namespace Server.Services
 {
     public interface IPatientService
     {
-        Task<List<PatientDto>> GetAllPatients(Therapist therapist);
-        Task<PatientDto> AddPatient(Therapist therapist, AddPatientDto dto);
-        Task<PatientDto> GetPatient(string id);
-        Task<PatientDto> EditPatient(PatientDto userDto);
-        Task RemovePatient(string id);
-        Task RefreshPatientToken(string id);
-        Task<Patient> GetPatientByToken(string token);
+        Task<List<Patient>> List(Therapist therapist);
+        Task<Patient> Add(Therapist therapist, AddPatientViewModel viewModel);
+        Task<Patient> Edit(PatientViewModel userViewModel);
+        Task Remove(string id);
+        Task RefreshToken(string id);
+        Task<Patient> GetById(string id);
+        Task<Patient> GetByToken(string token);
     }
 
     internal class PatientService: IPatientService
@@ -31,19 +31,19 @@ namespace Server.Services
             _tokenService = tokenService;
         }
         
-        public async Task<PatientDto> AddPatient(Therapist therapist, AddPatientDto dto)
+        public async Task<Patient> Add(Therapist therapist, AddPatientViewModel viewModel)
         {
-            if (dto is null)
+            if (viewModel is null)
             {
-                throw new ArgumentNullException(nameof(dto));
+                throw new ArgumentNullException(nameof(viewModel));
             }
 
-            if (dto.Nhc is null && dto.Zip is null)
+            if (viewModel.Nhc is null && viewModel.Zip is null)
             {
                 throw new ArgumentException("Nhc or zip must be not null");
             }
 
-            if (await _context.Patients.Where(u => u.Nhc == dto.Nhc).AnyAsync())
+            if (await _context.Patients.Where(u => u.Nhc == viewModel.Nhc).AnyAsync())
             {
                 throw new ArgumentException("This patient already exists in the db");
             }
@@ -51,8 +51,8 @@ namespace Server.Services
             var patient = new Patient
             {
                 Therapist = therapist,
-                Nhc = dto.Nhc,
-                Zip = dto.Zip,
+                Nhc = viewModel.Nhc,
+                Zip = viewModel.Zip,
                 Token = await _tokenService.GenerateToken(),
                 FullName = System.IO.Path.GetRandomFileName() // TODO Get name from the hospital api service
             };
@@ -60,81 +60,64 @@ namespace Server.Services
             await _context.Patients.AddAsync(patient);
             await _context.SaveChangesAsync();
 
-            return new PatientDto
-            {
-                Id = patient.Id.ToString(),
-                Name = patient.FullName,
-                Nhc = patient.Nhc,
-                Token = patient.Token,
-                Zip = patient.Zip
-            };
+            return patient;
         }
 
-        public async Task<List<PatientDto>> GetAllPatients(Therapist therapist)
+        public async Task<List<Patient>> List(Therapist therapist)
         {
-            var dbUsers = await _context.Patients
+            return await _context
+                .Patients
                 .Where(p=> p.Therapist == therapist)
+                .Include(p => p.Therapist)
                 .ToListAsync();
-
-            return dbUsers.Select(patient =>  new PatientDto
-            {
-                Id = patient.Id.ToString(),
-                Name = patient.FullName,
-                Nhc = patient.Nhc,
-                Token = patient.Token,
-                Zip = patient.Zip
-            }).ToList();
         }
 
-        public async Task<PatientDto> GetPatient(string id)
+        public async Task<Patient> GetById(string id)
         {
-            var u = await _context.Patients.FindAsync(new Guid(id));
-
-            return new PatientDto()
-            {
-                Id = u.Id.ToString(),
-                Name = u.FullName,
-                Nhc = u.Nhc,
-                Token = u.Token,
-                Zip = u.Zip
-            };
+            return await _context
+                .Patients
+                .Where(p => p.Id == Guid.Parse(id))
+                .Include(p => p.Therapist)
+                .FirstOrDefaultAsync();
         }
 
-        public async Task<PatientDto> EditPatient(PatientDto patientDto)
+        public async Task<Patient> Edit(PatientViewModel patientViewModel)
         {
-            var u = await _context.Patients.FindAsync(new Guid(patientDto.Id));
+            var patient = await GetById(patientViewModel.Id);
 
-            u.FullName = patientDto.Name;
-            u.Zip = patientDto.Zip;
-            u.Nhc = patientDto.Nhc;
+            patient.FullName = patientViewModel.Name;
+            patient.Zip = patientViewModel.Zip;
+            patient.Nhc = patientViewModel.Nhc;
 
             await _context.SaveChangesAsync();
 
-            return patientDto;
+            return patient;
         }
 
-        public async Task RemovePatient(string id)
+        public async Task Remove(string id)
         {
-            var p = await _context.Patients.FindAsync(new Guid(id));
+            var patient = await GetById(id);
             
-            _context.Patients.Remove(p);
+            _context.Patients.Remove(patient);
             
             await _context.SaveChangesAsync();
         }
 
-        public async Task RefreshPatientToken(string id)
+        public async Task RefreshToken(string id)
         {
-            var u = await _context.Patients.FindAsync(new Guid(id));
+            var patient = await GetById(id);
 
-            u.Token = await _tokenService.GenerateToken();
+            patient.Token = await _tokenService.GenerateToken();
             
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Patient> GetPatientByToken(string token)
+        public async Task<Patient> GetByToken(string token)
         {
-            return await _context.Patients
-                .Where(u => u.Token == token)
+            return await _context
+                .Patients
+                .Where(p => p.Token == token)
+                .Include(p => p.Therapist)
                 .FirstOrDefaultAsync();
         }
     }

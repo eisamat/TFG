@@ -1,48 +1,46 @@
-﻿using System;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Server.Models;
 using Server.Services;
 
 namespace Server.Controllers
 {
-    public class LoginDto
+    public class LoginRequest
     {
         public string Token { get; set; }
     }
     
     [Authorize]
     [ApiController]
-    [Route("auth")]
-    public class AuthenticationController: ControllerBase
+    [Route("api/patient")]
+    public class PatientController: ControllerBase
     {
-        private readonly ILogger<AuthenticationController> _logger;
         private readonly IPatientService _patientService;
 
-        public AuthenticationController(IPatientService patientService, ILogger<AuthenticationController> logger)
+        public PatientController(IPatientService patientService)
         {
             _patientService = patientService;
-            _logger = logger;
         }
         
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody]LoginDto loginDto)
+        public async Task<IActionResult> Authenticate([FromBody]LoginRequest loginRequest)
         {
-            var user = await _patientService.GetPatientByToken(loginDto.Token);
+            var patient = await _patientService.GetByToken(loginRequest.Token);
 
-            if (user == null)
+            if (patient == null)
             {
                 return BadRequest(new { message = "Invalid token" });
             }
 
-            return Ok(user);
+            return Ok(patient.Adapt<PatientViewModel>());
         }
         
         [HttpPost("@me")]
-        public async Task<IActionResult> GetUserInformation()
+        public async Task<IActionResult> Get()
         {
             var identifier = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
@@ -51,14 +49,14 @@ namespace Server.Controllers
                 return BadRequest(new { message = "Invalid token" });
             }
             
-            var user = await _patientService.GetPatient(identifier);
+            var patient = await _patientService.GetById(identifier);
 
-            if (user == null)
+            if (patient == null)
             {
                 return BadRequest(new { message = "Invalid token" });
             }
 
-            return Ok(user);
+            return Ok(patient.Adapt<PatientViewModel>());
         }
     }
 }

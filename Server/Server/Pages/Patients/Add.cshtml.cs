@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Server.Identity;
 using Server.Models;
 using Server.Services;
+using Server.Services.Identity;
 
 namespace Server.Pages.Patients 
 {
@@ -26,7 +26,7 @@ namespace Server.Pages.Patients
         }
 
         [BindProperty]
-        public AddPatientDto Model { get; init; }
+        public AddPatientViewModel Model { get; init; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -38,8 +38,8 @@ namespace Server.Pages.Patients
             try
             {
                 var identifier = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var therapist = await _therapistService.GetTherapist(identifier);
-                await _patientService.AddPatient(therapist, Model);
+                var therapist = await _therapistService.Get(identifier);
+                await _patientService.Add(therapist, Model);
                 return RedirectToPage("./List");
             }
             catch (Exception e)

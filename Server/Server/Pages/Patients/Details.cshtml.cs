@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Server.Identity;
 using Server.Models;
 using Server.Services;
+using Server.Services.Identity;
 
 namespace Server.Pages.Patients
 {
@@ -14,7 +15,7 @@ namespace Server.Pages.Patients
     public class PatientDetailsModel : PageModel
     {
         [BindProperty]
-        public PatientDto Model { get; set; }
+        public PatientViewModel Model { get; set; }
         
         private readonly ILogger<PatientDetailsModel> _logger;
         private readonly IPatientService _patientService;
@@ -32,7 +33,7 @@ namespace Server.Pages.Patients
                 return NotFound();
             }
             
-            Model = await _patientService.GetPatient(id);
+            Model = (await _patientService.GetById(id)).Adapt<PatientViewModel>();
 
             if (User == null)
             {
@@ -46,7 +47,7 @@ namespace Server.Pages.Patients
         {
             try
             {
-                await _patientService.EditPatient(Model);
+                await _patientService.Edit(Model);
             }
             catch (Exception e)
             {
@@ -59,7 +60,7 @@ namespace Server.Pages.Patients
         
         public async Task<IActionResult> OnPostRefreshTokenAsync()
         {
-            await _patientService.RefreshPatientToken(Model.Id);
+            await _patientService.RefreshToken(Model.Id);
             
             return RedirectToPage("Details");
         }

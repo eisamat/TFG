@@ -18,7 +18,7 @@ namespace Server.Controllers
     
     [AllowAnonymous]
     [ApiController]
-    [Route("utils")]
+    [Route("api/utils")]
     public class UtilsController: ControllerBase
     {
         private readonly ITherapistService _therapistService;
@@ -31,7 +31,7 @@ namespace Server.Controllers
         [HttpPost("admin")]
         public async Task<IActionResult> CreateAdmin([FromBody]AdminDto adminDto)
         {
-            await _therapistService.AddTherapist(adminDto.Fullname, adminDto.Username, adminDto.Password);
+            await _therapistService.Add(adminDto.Fullname, adminDto.Username, adminDto.Password);
             return Ok(adminDto);
         }
     }

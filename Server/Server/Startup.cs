@@ -1,3 +1,5 @@
+using System.Drawing;
+using Mapster;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -7,8 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Server.Database;
-using Server.Identity;
+using Server.Database.Models;
+using Server.Models;
 using Server.Services;
+using Server.Services.Identity;
 
 namespace Server
 {
@@ -37,8 +41,8 @@ namespace Server
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddAuthentication(TokenAuthenticationDefaults.AuthenticationScheme)
-                .AddScheme<AuthenticationSchemeOptions, TokenAuthenticationHandler>(TokenAuthenticationDefaults.AuthenticationScheme, options => { })
-                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>(BasicAuthenticationDefaults.AuthenticationScheme, options => { });
+                .AddScheme<AuthenticationSchemeOptions, TokenAuthenticationHandler>(TokenAuthenticationDefaults.AuthenticationScheme, _ => { })
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>(BasicAuthenticationDefaults.AuthenticationScheme, _ => { });
             
             services.AddAuthorization(options =>
             {
@@ -80,6 +84,15 @@ namespace Server
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
+            
+            ConfigureMapper();
+        }
+
+        private void ConfigureMapper()
+        {
+            TypeAdapterConfig<Patient, PatientViewModel>.NewConfig()
+                .Map(dest => dest.Therapist, src => src.Therapist.Id)
+                .Map(dest => dest.Name, src => src.FullName);
         }
     }
 }
