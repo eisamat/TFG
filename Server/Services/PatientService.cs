@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Server.Database;
 using Server.Database.Models;
 using Server.Models;
+using Server.ViewModels;
 
 namespace Server.Services
 {

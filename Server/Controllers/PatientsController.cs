@@ -3,16 +3,13 @@ using System.Threading.Tasks;
 using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Server.Models;
 using Server.Services;
+using Server.ViewModels;
+using Shared.Api.Requests;
+using Shared.Api.Responses;
 
 namespace Server.Controllers
 {
-    public class LoginRequest
-    {
-        public string Token { get; set; }
-    }
-    
     [Authorize]
     [ApiController]
     [Route("api/patient")]
@@ -27,7 +24,7 @@ namespace Server.Controllers
         
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> Authenticate([FromBody]LoginRequest loginRequest)
+        public async Task<IActionResult> Authenticate([FromBody]PatientLoginRequest loginRequest)
         {
             var patient = await _patientService.GetByToken(loginRequest.Token);
 
@@ -36,7 +33,7 @@ namespace Server.Controllers
                 return BadRequest(new { message = "Invalid token" });
             }
 
-            return Ok(patient.Adapt<PatientViewModel>());
+            return Ok(patient.Adapt<PatientLoginResponse>());
         }
         
         [HttpPost("@me")]

@@ -1,6 +1,6 @@
-﻿namespace Server.ViewModels
+﻿namespace App.Models
 {
-    public class PatientViewModel
+    public class User
     {
         public string Id { get; set; }
         public string Nhc { get; set; }

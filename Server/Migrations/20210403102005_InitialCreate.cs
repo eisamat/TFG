@@ -11,10 +11,10 @@ namespace Server.Migrations
                 name: "Therapists",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<Guid>(nullable: false),
+                    FullName = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -25,12 +25,12 @@ namespace Server.Migrations
                 name: "Patients",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Token = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Nhc = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Zip = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TherapistId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Id = table.Column<Guid>(nullable: false),
+                    Token = table.Column<string>(nullable: true),
+                    FullName = table.Column<string>(nullable: true),
+                    Nhc = table.Column<string>(nullable: true),
+                    Zip = table.Column<string>(nullable: true),
+                    TherapistId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {

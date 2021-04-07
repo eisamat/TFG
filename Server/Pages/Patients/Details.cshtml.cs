@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Server.Models;
 using Server.Services;
 using Server.Services.Identity;
+using Server.ViewModels;
 
 namespace Server.Pages.Patients
 {

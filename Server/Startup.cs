@@ -13,6 +13,8 @@ using Server.Database.Models;
 using Server.Models;
 using Server.Services;
 using Server.Services.Identity;
+using Server.ViewModels;
+using Shared.Api.Responses;
 
 namespace Server
 {
@@ -38,8 +40,6 @@ namespace Server
                 options.UseSqlServer(Configuration.GetConnectionString("db"));
             });
             
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
             services.AddAuthentication(TokenAuthenticationDefaults.AuthenticationScheme)
                 .AddScheme<AuthenticationSchemeOptions, TokenAuthenticationHandler>(TokenAuthenticationDefaults.AuthenticationScheme, _ => { })
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>(BasicAuthenticationDefaults.AuthenticationScheme, _ => { });
@@ -88,9 +88,13 @@ namespace Server
             ConfigureMapper();
         }
 
-        private void ConfigureMapper()
+        private static void ConfigureMapper()
         {
             TypeAdapterConfig<Patient, PatientViewModel>.NewConfig()
+                .Map(dest => dest.Therapist, src => src.Therapist.Id)
+                .Map(dest => dest.Name, src => src.FullName);
+            
+            TypeAdapterConfig<Patient, PatientLoginResponse>.NewConfig()
                 .Map(dest => dest.Therapist, src => src.Therapist.Id)
                 .Map(dest => dest.Name, src => src.FullName);
         }

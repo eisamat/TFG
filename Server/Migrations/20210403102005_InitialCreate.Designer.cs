@@ -10,15 +10,15 @@ using Server.Database;
 namespace Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210329171125_InitialCreate")]
+    [Migration("20210403102005_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("ProductVersion", "3.1.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Server.Database.Models.Patient", b =>
@@ -82,13 +82,6 @@ namespace Server.Migrations
                     b.HasOne("Server.Database.Models.Therapist", "Therapist")
                         .WithMany("Patients")
                         .HasForeignKey("TherapistId");
-
-                    b.Navigation("Therapist");
-                });
-
-            modelBuilder.Entity("Server.Database.Models.Therapist", b =>
-                {
-                    b.Navigation("Patients");
                 });
 #pragma warning restore 612, 618
         }

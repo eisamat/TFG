@@ -1,6 +1,6 @@
-﻿namespace Server.ViewModels
+﻿namespace Shared.Api.Responses
 {
-    public class PatientViewModel
+    public class PatientLoginResponse
     {
         public string Id { get; set; }
         public string Nhc { get; set; }
