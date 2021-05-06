@@ -1,0 +1,32 @@
+﻿@model Pages.Patients.PatientDetailsModel
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@ViewData["string_user_details"]</h5>
+        <form method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="username" asp-for="Model.Name">
+            </div>
+            <div class="mb-3">
+                <label for="nhc" class="form-label">Nhc</label>
+                <input type="text" class="form-control" id="nhc" asp-for="Model.Nhc">
+            </div>
+            <div class="mb-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" asp-for="Model.Zip">
+            </div>
+            <label for="token" class="form-label">Codi d'accès</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="token" asp-for="Model.Token" disabled readonly>
+                <div class="input-group-append">
+                    <input class="btn btn-outline-secondary" type="submit" value="Refrescar" asp-page-handler="RefreshToken">
+                </div>
+            </div>
+            <input type="hidden" asp-for="Model.Id"/>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Guardar canvis" asp-page-handler="SaveChanges">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+﻿{
+  "content": [
+    {
+      "name": "INTRODUCCIÓ",
+      "videos": [
+        {
+          "youtubeId": "H6lwK_oc3ro",
+          "name": "Per a què serveix la rehabilitació?"
+        }
+      ]
+    },
+    {
+      "name": "ACTIVITATS DE LA VIDA DIÀRIA",
+      "videos": [
+        {
+          "youtubeId": "wNkB1F76fmI",
+          "name": "Posar mitjons"
+        },
+        {
+          "youtubeId": "ftJ17hebZOk",
+          "name": "Tallar amb el ganivet"
+        },
+        {
+          "youtubeId": "jsiziuu4cSI",
+          "name": "Obrir envasos"
+        },
+        {
+          "youtubeId": "UT2hOZr1WOs",
+          "name": "Alimentació assistida"
+        },
+        {
+          "youtubeId": "IWAlIWGMl9w",
+          "name": "Ordenar el necesser"
+        },
+        {
+          "youtubeId": "46Kjj97WpVU",
+          "name": "Fer el llit"
+        }
+      ]
+    },
+    {
+      "name": "MOBILITAT AL LLIT",
+      "videos": [
+        {
+          "youtubeId": "MrSliM_7G6M",
+          "name": "Desplaçar-se lateralment"
+        },
+        {
+          "youtubeId": "Wb2AWobigcc",
+          "name": "Girar-se al costat afectat"
+        },
+        {
+          "youtubeId": "sUZ-gb1Mhjs",
+          "name": "Girar-se al costat sa"
+        },
+        {
+          "youtubeId": "7ZLLaXVf8zs",
+          "name": "D’estirat a assegut"
+        },
+        {
+          "youtubeId": "TbSsfHmmr4o",
+          "name": "D’assegut a dret"
+        }
+      ]
+    },
+    {
+      "name": "COORDINACIÓ UNIMANUAL",
+      "videos": [
+        {
+          "youtubeId": "E52pEZ4brjA",
+          "name": "Agafar cds"
+        },
+        {
+          "youtubeId": "HLiKXDHYvz0",
+          "name": "Fer boles de paper"
+        },
+        {
+          "youtubeId": "m6fcXTWlygM",
+          "name": "Passar pàgines"
+        },
+        {
+          "youtubeId": "eeLpY0iqnJs",
+          "name": "Girar el llapis"
+        },
+        {
+          "youtubeId": "HdsEcyAZLIM",
+          "name": "Treure taps"
+        },
+        {
+          "youtubeId": "ECkIDXj8Yp4",
+          "name": "Fer grapats"
+        },
+        {
+          "youtubeId": "7Ziidlcx95w",
+          "name": "Clavar punxes"
+        },
+        {
+          "youtubeId": "tuJ9-TKlkIc",
+          "name": "Fer castells i efecte dominó"
+        },
+        {
+          "youtubeId": "Bz4rjsjuM3k",
+          "name": "Botar piloteta"
+        },
+        {
+          "youtubeId": "mflZPyLlSqI",
+          "name": "Disparar amb catapulta"
+        },
+        {
+          "youtubeId": "jSlrQjtOl_Y",
+          "name": "Llençar bales"
+        },
+        {
+          "youtubeId": "C45DgG56Ljc",
+          "name": "Guardar objectes"
+        }
+      ]
+    }
+  ]
+}

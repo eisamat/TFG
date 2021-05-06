@@ -1,8 +1,8 @@
 ﻿@page
 @model Pages.Patients.PatientListModel
 @{
-    ViewData["Title"] = "Llista d'usuaris";
-    ViewData["string_new_user"] = "Afegir nou usuari";
+    ViewData["Title"] = "Llista de pacients";
+    ViewData["string_new_user"] = "Afegir nou pacient";
     ViewData["string_delete_user"] = "Eliminar";
     ViewData["string_details_user"] = "Detalls";
 }
@@ -28,7 +28,7 @@
                 <td>@Html.DisplayFor(modelItem => user.Zip)</td>
                 <td>
                     <a asp-page="./Details" asp-route-id="@user.Id">@ViewData["string_details_user"]</a> |
-                    <a asp-page="./Remove" asp-route-id="@user.Id">@ViewData["string_delete_user"]</a>
+                    <a asp-page="./Delete" asp-route-id="@user.Id">@ViewData["string_delete_user"]</a>
                 </td>
             </tr>
         }

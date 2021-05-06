@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace Server.ViewModels
+﻿namespace Shared.Api.Responses
 {
-    public class PatientViewModel
+    public class PatientDetailsResponse
     {
         public string Id { get; set; }
         public string Nhc { get; set; }
@@ -10,7 +8,5 @@ namespace Server.ViewModels
         public string Token { get; set; }
         public string Name { get; set; }
         public string Therapist { get; set; }
-        
-        public ICollection<VideoDto> Videos { get; set; }
     }
 }

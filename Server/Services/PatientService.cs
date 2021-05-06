@@ -75,11 +75,14 @@ namespace Server.Services
 
         public async Task<Patient> GetById(string id)
         {
-            return await _context
+            var patient = await _context
                 .Patients
-                .Where(p => p.Id == Guid.Parse(id))
                 .Include(p => p.Therapist)
-                .FirstOrDefaultAsync();
+                .Include(p => p.Videos)
+                    .ThenInclude(v => v.Category)
+                .FirstOrDefaultAsync(p => p.Id == Guid.Parse(id));
+
+            return patient;
         }
 
         public async Task<Patient> Edit(PatientViewModel patientViewModel)

@@ -1,5 +1,4 @@
-﻿using App.Services;
-using App.ViewModels;
+﻿using App.ViewModels;
 using CommonServiceLocator;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Server.Models;
 using Server.Services;
 using Server.Services.Identity;
 using Server.ViewModels;
@@ -20,11 +19,13 @@ namespace Server.Pages.Patients
         
         private readonly ILogger<PatientDetailsModel> _logger;
         private readonly IPatientService _patientService;
+        private readonly IVideoService _videoService;
 
-        public PatientDetailsModel(ILogger<PatientDetailsModel> logger, IPatientService patientService)
+        public PatientDetailsModel(ILogger<PatientDetailsModel> logger, IPatientService patientService, IVideoService videoService)
         {
             _logger = logger;
             _patientService = patientService;
+            _videoService = videoService;
         }
 
         public async Task<IActionResult> OnGetAsync(string id)
@@ -62,6 +63,22 @@ namespace Server.Pages.Patients
         public async Task<IActionResult> OnPostRefreshTokenAsync()
         {
             await _patientService.RefreshToken(Model.Id);
+            
+            return RedirectToPage("Details");
+        }
+        
+        public async Task<IActionResult> OnPostUnassignVideoAsync()
+        {
+            try
+            {
+                string videoId = Request.Form["videoId"];
+                await _videoService.UnassignVideo(Model.Id, videoId);
+            }
+            catch (Exception e)
+            {
+                _logger.LogCritical("Error: {Error}", e.Message);
+                throw;
+            }
             
             return RedirectToPage("Details");
         }

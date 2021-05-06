@@ -53,7 +53,7 @@ namespace Server.Controllers
                 return BadRequest(new { message = "Invalid token" });
             }
 
-            return Ok(patient.Adapt<PatientViewModel>());
+            return Ok(patient.Adapt<PatientDetailsResponse>());
         }
     }
 }

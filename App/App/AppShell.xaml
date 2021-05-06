@@ -27,4 +27,7 @@
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    </TabBar>
 </Shell>

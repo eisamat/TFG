@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading;
+using System.Threading.Tasks;
+using App.Database;
 using App.Services;
 using App.Services.Api;
-using App.Views;
 using CommonServiceLocator;
 using Refit;
 using Unity;
@@ -13,7 +16,6 @@ namespace App
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
@@ -29,9 +31,22 @@ namespace App
             ConfigureLoadingPageService(container);
         }
         
-        protected override void OnStart()
+        protected async override void OnStart()
         {
-            
+            var database = await AppDatabase.Instance;
+            var loggedUser = await database.GetUserAsync();
+
+            if (loggedUser == null)
+            {
+                // Show Login page
+                Console.WriteLine("User not logged in");
+            }
+            else
+            {
+                // Show dashboard page
+                Console.WriteLine("User logged in");
+                await Shell.Current.GoToAsync("///MainPage");
+            }
         }
 
         protected override void OnSleep()
@@ -46,11 +61,7 @@ namespace App
         
         private static void ConfigureRestApi(IUnityContainer container)
         {
-            var httpHandler = new HttpClientHandler
-            {
-                ServerCertificateCustomValidationCallback = (o, cert, chain, errors) => true
-            };
-            var client = new HttpClient(httpHandler)
+            var client = new HttpClient(container.Resolve<AuthorizationHttpHandler>())
             {
                 BaseAddress = new Uri(Urls.BaseUrl)
             };
@@ -59,7 +70,7 @@ namespace App
 
             container.RegisterInstance(restApi);
         }
-        
+
         private static void ConfigureLoadingPageService(IUnityContainer container)
         {
             var loadingPageService = DependencyService.Get<ILoadingPageService>();

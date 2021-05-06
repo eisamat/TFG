@@ -28,58 +28,74 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/978EC34C-5C9C-4C4E-B3D7-3B6DA958BCD6/39/Command.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Emili/Documents/Personal/TFG/TFG/App/App/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DE81B03-79C9-4FEC-83D5-F8A949DAEA5D/b0/e5f27838/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D8946065-32D8-412A-9567-09265D2E1C82/8a/33986d0b/TypeAdapterConfig`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54494287-9CC1-4DEE-B61C-0F4FB47AF640/14/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86B7B18F-4219-4E00-BDA9-F094D1F0F51B/3C/HtmlHelperPartialExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DE81B03-79C9-4FEC-83D5-F8A949DAEA5D/b0/e5f27838/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51F0A800-D4BA-4065-B4A1-9D7E8A4CDEAC/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51F0A800-D4BA-4065-B4A1-9D7E8A4CDEAC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/44EC54FB-C892-404D-A687-6260A5219E12/53/HttpClientHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/App/App.Android/obj/Debug/110/designtime/Resource.designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04C545F4-14D2-4A37-AF95-D995791BB9A9/7A/Platform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59CF555-B7A7-4189-9D56-1687B0C52C9B/19/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/6A/RedirectToPageResult.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/.idea/.idea.Server/.idea/.name" />
-      <option value="$PROJECT_DIR$/Server.sln" />
-      <option value="$PROJECT_DIR$/App/App/App.csproj" />
-      <option value="$PROJECT_DIR$/Server/Server.csproj" />
-      <option value="$PROJECT_DIR$/App1/App1.Android/App1.Android.csproj" />
-      <option value="$PROJECT_DIR$/App/App.Android/App.Android.csproj" />
-      <option value="$PROJECT_DIR$/App/App/Views/AboutPage.xaml" />
-      <option value="$PROJECT_DIR$/App/App/AppShell.xaml" />
-      <option value="$PROJECT_DIR$/App/App/Models/Item.cs" />
-      <option value="$PROJECT_DIR$/Server/ViewModels/PatientViewModel.cs" />
-      <option value="$PROJECT_DIR$/App/App/Models/User.cs" />
-      <option value="$PROJECT_DIR$/App/App/Services/IUserDataStore.cs" />
-      <option value="$PROJECT_DIR$/App/App/ViewModels/BaseViewModel.cs" />
-      <option value="$PROJECT_DIR$/App/App/AppShell.xaml.cs" />
-      <option value="$PROJECT_DIR$/App/App/Strings.resx" />
-      <option value="$PROJECT_DIR$/App/App/AssemblyInfo.cs" />
-      <option value="$PROJECT_DIR$/App/App/Resources/Strings.resx" />
-      <option value="$PROJECT_DIR$/App/App/AppResources.resx" />
-      <option value="$PROJECT_DIR$/App/App/Services/User/IUserDataStore.cs" />
-      <option value="$PROJECT_DIR$/App/App/Services/Api/Requests/AuthenticateRequest.cs" />
-      <option value="$PROJECT_DIR$/App/App/ViewModels/ViewModelLocator.cs" />
-      <option value="$PROJECT_DIR$/App/App/App.xaml" />
-      <option value="$PROJECT_DIR$/App/App.Android/Properties/AndroidManifest.xml" />
-      <option value="$PROJECT_DIR$/Shared/Class1.cs" />
-      <option value="$PROJECT_DIR$/Shared/Api/Requests/LoginRequest.cs" />
-      <option value="$PROJECT_DIR$/Shared/Api/Responses/PatientLoginResponse.cs" />
-      <option value="$PROJECT_DIR$/Server/Controllers/PatientsController.cs" />
-      <option value="$PROJECT_DIR$/Shared/Shared.csproj" />
-      <option value="$PROJECT_DIR$/Server/Pages/Patients/Add.cshtml.cs" />
-      <option value="$PROJECT_DIR$/Server/Services/Identity/TokenAuthenticationHandler.cs" />
-      <option value="$PROJECT_DIR$/App/App/Services/Api/RestService.cs" />
-      <option value="$PROJECT_DIR$/App/App/Views/LoadingIndicatorPage.xaml.cs" />
-      <option value="$PROJECT_DIR$/App/App/Services/LoadingPageService.cs" />
-      <option value="$PROJECT_DIR$/App/App.Android/MainActivity.cs" />
-      <option value="$PROJECT_DIR$/Server/Startup.cs" />
-      <option value="$PROJECT_DIR$/App/App/Views/LoginPage.xaml.cs" />
-      <option value="$PROJECT_DIR$/App/App/Views/LoginPage.xaml" />
-      <option value="$PROJECT_DIR$/App/App.Android/Services/LoadingPageService.cs" />
-      <option value="$PROJECT_DIR$/App/App/App.xaml.cs" />
-      <option value="$PROJECT_DIR$/Shared/Api/Requests/PatientLoginRequest.cs" />
       <option value="$PROJECT_DIR$/App/App/Views/LoadingIndicatorPage.xaml" />
       <option value="$PROJECT_DIR$/App/App/AppResources.Designer.cs" />
       <option value="$PROJECT_DIR$/App/App/Database/DatabaseConstants.cs" />
       <option value="$PROJECT_DIR$/App/App/Database/AppDatabase.cs" />
+      <option value="$PROJECT_DIR$/App/App/Views/LoginPage.xaml.cs" />
+      <option value="$PROJECT_DIR$/App/App/Views/Dashboard.xaml" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/VideoAsignment.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/VideoAssignments.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/VideoAssignment.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/Message.cs" />
+      <option value="$PROJECT_DIR$/Shared/Api/Responses/PatientDetailsResponse.cs" />
+      <option value="$PROJECT_DIR$/Server/Controllers/PatientsController.cs" />
+      <option value="$PROJECT_DIR$/App/App/ViewModels/ViewModelLocator.cs" />
+      <option value="$PROJECT_DIR$/App/App/Views/MainPage.xaml.cs" />
+      <option value="$PROJECT_DIR$/App/App/App.AuthorizationHttpHandler.cs" />
+      <option value="$PROJECT_DIR$/App/App/Services/Api/HttpClientHandler.cs" />
+      <option value="$PROJECT_DIR$/App/App/App.xaml.cs" />
+      <option value="$PROJECT_DIR$/App/App/ViewModels/MainViewModel.cs" />
+      <option value="$PROJECT_DIR$/App/App/Views/MainPage.xaml" />
       <option value="$PROJECT_DIR$/App/App/ViewModels/LoginViewModel.cs" />
+      <option value="$PROJECT_DIR$/App/App/AppShell.xaml" />
+      <option value="$PROJECT_DIR$/App/App/App.xaml" />
+      <option value="$PROJECT_DIR$/App/App/Services/Api/RestService.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/AppDbContext.cs" />
+      <option value="$PROJECT_DIR$/Server/videos.json" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Add.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/PatientDetailsComponent.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details/PatientDetailsComponent.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details/PatientDetailsAssignedVideos.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details/Details.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details/Details.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/PatientVideo.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/Patient.cs" />
+      <option value="$PROJECT_DIR$/Server/Services/PatientService.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/Video.cs" />
+      <option value="$PROJECT_DIR$/Server/Database/Models/Category.cs" />
+      <option value="$PROJECT_DIR$/Server/ViewModels/PatientViewModel.cs" />
+      <option value="$PROJECT_DIR$/Server/ViewModels/VideoDto.cs" />
+      <option value="$PROJECT_DIR$/Server/Pages/Shared/_Layout.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/DetailsComponent.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignedVideosComponent.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Details.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/List.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/Delete.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Startup.cs" />
+      <option value="$PROJECT_DIR$/Server/ViewModels/CategoryDto.cs" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignVideo.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Services/VideoService.cs" />
+      <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignVideo.cshtml.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -99,14 +115,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.16738895" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_Xamarin" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-13T19:47:27.500771600Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
-  <component name="RunManager" selected="Xamarin.Android.App.Android">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Server">
     <configuration name="Server" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Server/Server.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -157,7 +175,40 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Server/Controllers/PatientsController.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\Emili\Documents\Personal\TFG\TFG\Server\Controllers\PatientsController.cs" initialLine="28" containingFunctionPresentation="method 'Authenticate'">
+            <startOffsets>
+              <option value="776" />
+            </startOffsets>
+            <endOffsets>
+              <option value="843" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Server/Pages/Patients/AssignVideo.cshtml.cs</url>
+          <line>80</line>
+          <properties documentPath="C:\Users\Emili\Documents\Personal\TFG\TFG\Server\Pages\Patients\AssignVideo.cshtml.cs" initialLine="80" containingFunctionPresentation="method 'OnPostAssignVideoAsync'">
+            <startOffsets>
+              <option value="2310" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2351" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="Model.Id" language="C#" />
+      </configuration>
       <configuration name="XamarinAndroidProject">
         <watch expression="uri" language="C#" />
       </configuration>

@@ -57,6 +57,8 @@ namespace App.ViewModels
                     Token = response.Token,
                     Zip = response.Zip
                 });
+                
+                await Shell.Current.GoToAsync("///MainPage");
             }
             catch (ApiException e)
             {

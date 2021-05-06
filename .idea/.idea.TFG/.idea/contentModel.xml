@@ -103,12 +103,14 @@
               <e p="Views" t="Include">
                 <e p="LoadingIndicatorPage.xaml.g.cs" t="Include" />
                 <e p="LoginPage.xaml.g.cs" t="Include" />
+                <e p="MainPage.xaml.g.cs" t="Include" />
               </e>
             </e>
           </e>
         </e>
         <e p="Services" t="Include">
           <e p="Api" t="Include">
+            <e p="AuthorizationHttpHandler.cs" t="Include" />
             <e p="RestService.cs" t="Include" />
           </e>
           <e p="IDataStore.cs" t="Include" />
@@ -120,6 +122,7 @@
         <e p="ViewModels" t="Include">
           <e p="BaseViewModel.cs" t="Include" />
           <e p="LoginViewModel.cs" t="Include" />
+          <e p="MainViewModel.cs" t="Include" />
           <e p="ViewModelLocator.cs" t="Include" />
         </e>
         <e p="Views" t="Include">
@@ -127,6 +130,8 @@
           <e p="LoadingIndicatorPage.xaml.cs" t="Include" />
           <e p="LoginPage.xaml" t="Include" />
           <e p="LoginPage.xaml.cs" t="Include" />
+          <e p="MainPage.xaml" t="Include" />
+          <e p="MainPage.xaml.cs" t="Include" />
         </e>
       </e>
       <e p="App\App.Android" t="IncludeRecursive">
@@ -201,16 +206,19 @@
         <e p="Database" t="Include">
           <e p="AppDbContext.cs" t="Include" />
           <e p="Models" t="Include">
+            <e p="Category.cs" t="Include" />
+            <e p="Message.cs" t="Include" />
             <e p="Patient.cs" t="Include" />
             <e p="Therapist.cs" t="Include" />
+            <e p="Video.cs" t="Include" />
           </e>
         </e>
         <e p="Helpers" t="Include">
           <e p="ExtensionMethods.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20210403102005_InitialCreate.cs" t="Include" />
-          <e p="20210403102005_InitialCreate.Designer.cs" t="Include" />
+          <e p="20210504131252_InitialMigration.cs" t="Include" />
+          <e p="20210504131252_InitialMigration.Designer.cs" t="Include" />
           <e p="AppDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -224,17 +232,23 @@
         <e p="Pages" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Components" t="Include">
+            <e p="PatientAssignedVideos.cshtml" t="Include" />
+            <e p="PatientDetails.cshtml" t="Include" />
+          </e>
           <e p="Index.cshtml" t="Include" />
           <e p="Index.cshtml.cs" t="Include" />
           <e p="Patients" t="Include">
             <e p="Add.cshtml" t="Include" />
             <e p="Add.cshtml.cs" t="Include" />
+            <e p="AssignVideo.cshtml" t="Include" />
+            <e p="AssignVideo.cshtml.cs" t="Include" />
+            <e p="dELETE.cshtml" t="Include" />
+            <e p="dELETE.cshtml.cs" t="Include" />
             <e p="Details.cshtml" t="Include" />
             <e p="Details.cshtml.cs" t="Include" />
             <e p="List.cshtml" t="Include" />
             <e p="List.cshtml.cs" t="Include" />
-            <e p="Remove.cshtml" t="Include" />
-            <e p="Remove.cshtml.cs" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
@@ -253,11 +267,15 @@
           <e p="PatientService.cs" t="Include" />
           <e p="TherapistService.cs" t="Include" />
           <e p="TokenService.cs" t="Include" />
+          <e p="VideoService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="videos.json" t="Include" />
         <e p="ViewModels" t="Include">
           <e p="AddPatientViewModel.cs" t="Include" />
+          <e p="CategoryDto.cs" t="Include" />
           <e p="PatientViewModel.cs" t="Include" />
+          <e p="VideoDto.cs" t="Include" />
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
@@ -275,6 +293,7 @@
             <e p="PatientLoginRequest.cs" t="Include" />
           </e>
           <e p="Responses" t="Include">
+            <e p="PatientDetailsResponse.cs" t="Include" />
             <e p="PatientLoginResponse.cs" t="Include" />
           </e>
         </e>
