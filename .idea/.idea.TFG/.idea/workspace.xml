@@ -41,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54494287-9CC1-4DEE-B61C-0F4FB47AF640/14/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86B7B18F-4219-4E00-BDA9-F094D1F0F51B/44/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC448158-0502-43F0-9371-E0222F9B6053/3/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86B7B18F-4219-4E00-BDA9-F094D1F0F51B/3C/HtmlHelperPartialExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DE81B03-79C9-4FEC-83D5-F8A949DAEA5D/b0/e5f27838/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC448158-0502-43F0-9371-E0222F9B6053/7/AuthenticationSchemeOptions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,9 +49,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/51F0A800-D4BA-4065-B4A1-9D7E8A4CDEAC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0CF2637F-2554-409D-BB8F-27E1E90007E3/3/CookieAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/44EC54FB-C892-404D-A687-6260A5219E12/53/HttpClientHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC448158-0502-43F0-9371-E0222F9B6053/4/AuthenticationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/54494287-9CC1-4DEE-B61C-0F4FB47AF640/2a/a81577c3/DeleteBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04C545F4-14D2-4A37-AF95-D995791BB9A9/7A/Platform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0CF2637F-2554-409D-BB8F-27E1E90007E3/2/CookieExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59CF555-B7A7-4189-9D56-1687B0C52C9B/19/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6F1631D8-2A7F-48D9-BC4B-E4DC1DB9C4CF/6A/RedirectToPageResult.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -76,7 +79,6 @@
       <option value="$PROJECT_DIR$/Server/Database/Models/Video.cs" />
       <option value="$PROJECT_DIR$/Server/Database/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/Server/Pages/Login.cshtml" />
-      <option value="$PROJECT_DIR$/Server/Pages/Index.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Videos/VideoManagement.cshtml" />
       <option value="$PROJECT_DIR$/Server/ViewModels/CreateCategoryModel.cs" />
       <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignVideo.cshtml.cs" />
@@ -106,6 +108,7 @@
       <option value="$PROJECT_DIR$/Server/Pages/Components/PatientAssignedVideos.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignVideo.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Components/PatientDetails.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Pages/Index.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Shared/_Layout.cshtml" />
     </changedPaths>
   </component>
