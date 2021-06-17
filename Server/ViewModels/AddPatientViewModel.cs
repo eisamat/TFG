@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Server.Models
+namespace Server.ViewModels
 {
     public class AddPatientViewModel
     {
@@ -9,5 +9,8 @@ namespace Server.Models
         
         [Required]
         public string Zip { get; set; }
+        
+        [Required]
+        public string Name { get; set; }
     }
 }

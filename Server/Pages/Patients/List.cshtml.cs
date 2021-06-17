@@ -5,7 +5,6 @@ using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Server.Models;
 using Server.Services;
 using Server.Services.Identity;
 using Server.ViewModels;

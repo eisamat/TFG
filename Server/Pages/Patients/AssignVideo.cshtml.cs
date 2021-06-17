@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Mapster;
@@ -43,51 +42,14 @@ namespace Server.Pages.Patients
 
             Model = (await _patientService.GetById(id)).Adapt<PatientViewModel>();
 
-            if (User == null)
+            if (Model == null)
             {
                 return NotFound();
             }
 
-            var videos = (await _videoService.GetVideos()).Adapt<ICollection<VideoDto>>();
-
-            var categories = videos.GroupBy(v => v.CategoryId);
-
-            foreach (var categoryGroup in categories)
-            {
-                var vidCollection = categoryGroup.ToList();
-
-                if (vidCollection.Count == 0)
-                {
-                    break;
-                }
-
-                var cat = new CategoryDto
-                {
-                    Id = categoryGroup.Key,
-                    Name = vidCollection.First().Name,
-                    Videos = vidCollection
-                };
-
-                Categories.Add(cat);
-            }
-
+            Categories = (await _videoService.GetVideosToAssign()).Adapt<ICollection<CategoryDto>>();
+            
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAssignVideoAsync()
-        {
-            try
-            {
-                string videoId = Request.Form["videoId"];
-                await _videoService.AssignVideo(Model.Id, videoId);
-            }
-            catch (Exception e)
-            {
-                _logger.LogCritical("Error: {Error}", e.Message);
-                throw;
-            }
-
-            return RedirectToPage("Details", new {id = Model.Id});
         }
     }
 }

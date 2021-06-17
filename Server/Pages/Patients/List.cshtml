@@ -11,10 +11,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Patients[0].Id)</th>
-            <th>@Html.DisplayNameFor(model => model.Patients[0].Name)</th>
-            <th>@Html.DisplayNameFor(model => model.Patients[0].Nhc)</th>
-            <th>@Html.DisplayNameFor(model => model.Patients[0].Zip)</th>
+            <th>Nom</th>
+            <th>Nhc</th>
+            <th>Zip</th>
             <th></th>
         </tr>
     </thead>
@@ -22,7 +21,6 @@
         @foreach (var user in Model.Patients)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => user.Id)</td>
                 <td>@Html.DisplayFor(modelItem => user.Name)</td>
                 <td>@Html.DisplayFor(modelItem => user.Nhc)</td>
                 <td>@Html.DisplayFor(modelItem => user.Zip)</td>

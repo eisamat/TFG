@@ -12,6 +12,16 @@ namespace Server.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AssignmentRecord>()
+                .HasOne(a => a.Patient)
+                .WithMany(p => p.Records)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            modelBuilder.Entity<AssignmentRecord>()
+                .HasOne(a => a.Video)
+                .WithMany(v => v.Records)
+                .OnDelete(DeleteBehavior.Cascade);
+                
             modelBuilder.Entity<Patient>()
                 .HasIndex(u => u.Nhc)
                 .IsUnique();
@@ -27,8 +37,13 @@ namespace Server.Database
             modelBuilder.Entity<Video>()
                 .HasIndex(v => v.Name);
 
+            modelBuilder.Entity<Video>()
+                .HasOne(v => v.Category)
+                .WithMany(c => c.Videos)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Message>()
-                .HasIndex(m => m.CreatedAt); 
+                .HasIndex(m => m.CreatedAt);
         }
 
         public DbSet<Patient> Patients { get; set; }
@@ -36,5 +51,6 @@ namespace Server.Database
         public DbSet<Video> Videos { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<AssignmentRecord> AssignmentRecords { get; set; }
     }
 }

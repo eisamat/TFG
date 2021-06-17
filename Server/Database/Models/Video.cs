@@ -15,5 +15,7 @@ namespace Server.Database.Models
         public Category Category { get; set; }
         
         public ICollection<Patient> Assigners { get; set; }
+        
+        public ICollection<AssignmentRecord> Records { get; set; }
     }
 }

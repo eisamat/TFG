@@ -2,36 +2,137 @@
 @model Server.Pages.Patients.AssignVideo
 
 @{
-    ViewData["Title"] = "Assignar video";
+    ViewData["Title"] = "Assignar vídeo";
 }
 
 <div class="container">
-    <div class="row">
+    <div class="row mb-4">
         <h1 class="mb-3">@ViewData["Title"]</h1>
-        <div class="col-md-12">
-            <div class="list-group mt-3">
-                @foreach (var category in Model.Categories)
-                {
-                    <h3 class="mt-3">@category.Name</h3>
+
+        <div id="assignedVideosAlert" class="col-md-12">
+            <div class="alert alert-warning">
+                <div class="d-flex w-100 justify-content-between align-items-center">
+                    <div>
+                        Tens <b id="assignedVideosNum">4</b> vídeos pendents per assignar
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="assignVideos()">
+                        Assignar vídeos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var category in Model.Categories)
+        {
+            <div class="col-md-6">
+                <div class="list-group mt-3">
+
+                    <li class="list-group-item list-group-item-primary flex-column align-items-start mt-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">@category.Name</h5>
+                            </div>
+                        </div>
+                    </li>
+
                     @foreach (var v in category.Videos)
                     {
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <li class="list-group-item flex-column align-items-start">
                             <div class="d-flex w-100 justify-content-between align-items-center">
                                 <div>
                                     <h5 class="mb-1">@v.Name</h5>
                                     <small class="text-muted">@v.CategoryName</small>
                                 </div>
-                                <form method="post">
-                                    <input id="handler_parameter" type="hidden" name="videoId" value="@v.Id"/>
-                                    <button type="submit" class="btn btn-primary" asp-page-handler="AssignVideo">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </form>
+                                <button id="@("b##" + v.Id)" type="submit" class="btn btn-primary" onclick="addAssignedVideo('@v.Id')">
+                                    <i class="fas fa-plus"></i>
+                                </button>
                             </div>
-                        </a>
-                    }    
-                }
+                        </li>
+                    }
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        const assignedVideos = []
+        const unassignedVideoIcon = "<i class='fas fa-plus'></i>";
+        const assignedVideoIcon = "<i class='fas fa-times'></i>";
+        
+        function updateUI() {
+            const buttons = $('button[id^="b##"]');
+            buttons.empty();
+            
+            buttons.each(function (b) {
+                const buttonId = this.id.replace("b##", "");
+                const jOb = $(this);
+                 if (assignedVideos.indexOf(buttonId) !== -1) {
+                     $(assignedVideoIcon).appendTo(jOb);        
+                     jOb.removeClass("btn-primary");
+                     jOb.addClass("btn-danger");
+                 } else {
+                     $(unassignedVideoIcon).appendTo(jOb);
+                     jOb.addClass("btn-primary");
+                     jOb.removeClass("btn-danger");
+                 }
+            });    
+            
+            if (assignedVideos.length > 0) {
+                $('#assignedVideosAlert').show();
+            } else {
+                $('#assignedVideosAlert').hide();
+            }
+            
+            $('#assignedVideosNum').text(assignedVideos.length);
+        }
+        
+        function clearAssignedVideos() {
+            assignedVideos.length = 0;
+            updateUI();
+        }
+        
+        function addAssignedVideo(videoId) {
+            const index = assignedVideos.indexOf(videoId);
+            if (index !== -1) {
+                assignedVideos.splice(index, 1);
+            } else {
+                assignedVideos.push(videoId);
+            }
+
+            updateUI();
+        }
+        
+        function removeAssignedVideo(videoId) {
+            const index = assignedVideos.indexOf(videoId);
+            if (index !== -1) {
+            }
+            updateUI();
+        }
+        
+        function assignedVideosToJson() {
+            return JSON.stringify({
+                id: "@Model.Model.Id", 
+                videos: assignedVideos
+            });
+        }
+        
+        function assignVideos() {
+            const videos = assignedVideosToJson();
+            
+            $.ajax({
+                  url: '@Url.Action("AssignVideos", "Videos")',
+                  type: 'POST',
+                  contentType: "application/json; charset=utf-8",
+                  data: videos
+               }).done(function() {
+                    window.location.href = "@Url.Page("/Patients/Details", new {id = @Model.Model.Id})";
+            });
+        }
+        
+        $(document).ready(function() {
+            updateUI();
+        });
+    </script>
+}

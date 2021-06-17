@@ -1,0 +1,35 @@
+﻿@page
+@model Server.Pages.Videos.AddVideo
+
+@{
+    ViewData["Title"] = "Afegir vídeo";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" asp-for="Model.Name">
+                </div>
+                <div class="mb-3">
+                    <label for="youtubeId" class="form-label">Youtube Id</label>
+                    <input type="text" class="form-control" id="youtubeId" asp-for="Model.YoutubeId">
+                </div>
+                <div class="mb-3">
+                    <label for="categoryId" class="form-label">Categoria</label>
+                    <select class="form-select" asp-items="Model.CategorySelect" asp-for="SelectedCategory"></select>
+                </div>
+
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Afegir" asp-page-handler="SaveChanges">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

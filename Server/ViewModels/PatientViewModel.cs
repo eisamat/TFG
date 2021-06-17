@@ -12,5 +12,6 @@ namespace Server.ViewModels
         public string Therapist { get; set; }
         
         public ICollection<VideoDto> Videos { get; set; }
+        public ICollection<PreviouslyAssignedVideosDto> PreviouslyAssignedVideos { get; set; }
     }
 }

@@ -1,0 +1,30 @@
+﻿@page "{id:guid}"
+@model EditCategory
+
+
+@{
+    ViewData["Title"] = "Editar categoria";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" asp-for="Model.Name">
+                </div>
+                <input type="hidden" asp-for="Model.Id"/>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Guardar canvis" asp-page-handler="SaveChanges">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Eliminar categoria" class="btn btn-danger" asp-page-handler="DeleteCategory"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -36,7 +36,8 @@ namespace Server.Pages.Patients
             }
             
             Model = (await _patientService.GetById(id)).Adapt<PatientViewModel>();
-
+            Model.PreviouslyAssignedVideos = (await _videoService.GetPreviouslyAssignedVideos(id));
+            
             if (User == null)
             {
                 return NotFound();

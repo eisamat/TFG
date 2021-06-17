@@ -17,7 +17,6 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Linq;
 using Server.Database;
 using Server.Database.Models;
-using Server.Models;
 using Server.Services;
 using Server.Services.Identity;
 using Server.ViewModels;
@@ -67,6 +66,7 @@ namespace Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppDbContext appDbContext)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -114,6 +114,13 @@ namespace Server
             TypeAdapterConfig<Patient, PatientDetailsResponse>.NewConfig()
                 .Map(dest => dest.Therapist, src => src.Therapist.Id)
                 .Map(dest => dest.Name, src => src.FullName);
+
+            TypeAdapterConfig<AssignmentRecord, VideoDto>.NewConfig()
+                .Map(dest => dest.Id, src => src.Video.Id)
+                .Map(dest => dest.YoutubeId, src => src.Video.YoutubeId)
+                .Map(dest => dest.CategoryId, src => src.Video.Category.Id)
+                .Map(dest => dest.CategoryName, src => src.Video.Category.Name)
+                .Map(dest => dest.Name, src => src.Video.Name);
         }
 
         private static void SeedDatabase(AppDbContext context)

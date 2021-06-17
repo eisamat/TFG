@@ -1,0 +1,58 @@
+﻿@page
+@model Server.Pages.Videos.VideoManageModel
+
+@{
+    ViewData["Title"] = "Gestionar vídeos";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+
+        <div class="form">
+            <a class="btn btn-primary" asp-page="/Videos/AddCategory">Afegir categoria</a>
+            <a class="btn btn-primary" asp-page="/Videos/AddVideo">Afegir vídeo</a>
+        </div>
+
+        @foreach (var c in Model.Categories)
+        {
+            <div class="col-md-6">
+                <div class="list-group mt-3">
+
+                    <li class="list-group-item list-group-item-primary flex-column align-items-start mt-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">@c.Name</h5>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-primary" asp-page="EditCategory" asp-route-id="@c.Id">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    @foreach (var v in c.Videos)
+                    {
+                        <li class="list-group-item flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">@v.Name</h5>
+                                    <small class="text-muted">@v.CategoryName</small>
+                                </div>
+                                <div>
+                                    <div class="btn-group" role="group">
+                                        <a class="btn btn-primary" asp-page="EditVideo" asp-route-id="@v.Id">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

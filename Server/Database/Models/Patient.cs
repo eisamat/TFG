@@ -16,5 +16,7 @@ namespace Server.Database.Models
         public Therapist Therapist { get; set; }
         
         public ICollection<Video> Videos { get; set; }
+        
+        public ICollection<AssignmentRecord> Records { get; set; }
     }
 }

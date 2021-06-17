@@ -4,28 +4,59 @@
     <div class="card-body">
         <div class="d-flex w-100 justify-content-between align-items-center">
             <h5>@ViewData["string_videos_assigned"]</h5>
-            <a asp-page="./AssignVideo" asp-route-id="@Model.Model.Id" class="btn btn-outline-primary"><i class="fas fa-plus"></i></a>
+            <a asp-page="./AssignVideo" asp-route-id="@Model.Model.Id" class="btn btn-outline-primary">
+                <i class="fas fa-plus"></i>
+            </a>
         </div>
 
         <div class="list-group mt-3">
-
             @foreach (var v in Model.Model.Videos)
             {
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <li class="list-group-item flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between align-items-center">
                         <div>
                             <h5 class="mb-1">@v.Name</h5>
                             <small class="text-muted">@v.CategoryName</small>
                         </div>
-                        <form method="post">
-                            <input id="handler_parameter" type="hidden" name="videoId" value="@v.Id"/>
-                            <button type="submit" class="btn btn-outline-danger"  asp-page-handler="UnassignVideo">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </form>
                     </div>
-                </a>
+                </li>
             }
         </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+            <h5>Vídeos assignats anteriorment</h5>
+        </div>
+
+        @foreach (var pav in Model.Model.PreviouslyAssignedVideos)
+        {
+            <div class="col-md-12">
+                <div class="list-group mt-3">
+
+                    <li class="list-group-item list-group-item-primary flex-column align-items-start mt-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-1">@pav.Date.ToString("dd/MM/yyyy")</h5>
+                            </div>
+                        </div>
+                    </li>
+
+                    @foreach (var v in pav.Videos)
+                    {
+                        <li class="list-group-item flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">@v.Name</h5>
+                                    <small class="text-muted">@v.CategoryName</small>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </div>
+            </div>
+        }
     </div>
 </div>

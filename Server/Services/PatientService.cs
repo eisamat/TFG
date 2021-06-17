@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Server.Database;
 using Server.Database.Models;
-using Server.Models;
 using Server.ViewModels;
 
 namespace Server.Services
@@ -44,6 +43,12 @@ namespace Server.Services
                 throw new ArgumentException("Nhc or zip must be not null");
             }
 
+            if (viewModel.Name is null)
+            {
+                throw new ArgumentException("Name must not be null");
+            }
+            
+
             if (await _context.Patients.Where(u => u.Nhc == viewModel.Nhc).AnyAsync())
             {
                 throw new ArgumentException("This patient already exists in the db");
@@ -55,7 +60,7 @@ namespace Server.Services
                 Nhc = viewModel.Nhc,
                 Zip = viewModel.Zip,
                 Token = await _tokenService.GenerateToken(),
-                FullName = System.IO.Path.GetRandomFileName() // TODO Get name from the hospital api service
+                FullName = viewModel.Name
             };
 
             await _context.Patients.AddAsync(patient);

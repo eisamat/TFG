@@ -4,7 +4,6 @@ using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Services;
-using Server.ViewModels;
 using Shared.Api.Requests;
 using Shared.Api.Responses;
 

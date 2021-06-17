@@ -1,0 +1,27 @@
+﻿@page
+@model Server.Pages.Videos.AddCategory
+
+
+@{
+    ViewData["Title"] = "Afegir categoria";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" asp-for="Model.Name">
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Afegir" asp-page-handler="SaveChanges">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

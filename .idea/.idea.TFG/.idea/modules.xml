@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/.idea.TFG/.idea/App.Android.iml" filepath="$PROJECT_DIR$/.idea/.idea.TFG/.idea/App.Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/.idea.TFG/.idea/riderModule.iml" filepath="$PROJECT_DIR$/.idea/.idea.TFG/.idea/riderModule.iml" />
     </modules>
   </component>

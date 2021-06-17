@@ -2,13 +2,15 @@
 @model Pages.Patients.AddPatientModel
 
 @{
-    ViewData["Title"] = "Afegir un nou usuari";
+    ViewData["Title"] = "Afegir nou pacient";
 }
 
 <div class="container">
     <div class="row">
         <h1 class="mb-3">@ViewData["Title"]</h1>
-        <div><a asp-page="List">Llista de pacients</a></div>
+        <div>
+            <a asp-page="List">Tornar enrere</a>
+        </div>
         <div class="col-md-4">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -19,6 +21,10 @@
                 <div class="mb-3">
                     <label for="zip" class="form-label">Zip</label>
                     <input type="text" class="form-control" id="zip" asp-for="Model.Zip">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" asp-for="Model.Name">
                 </div>
                 <div class="mb-3">
                     <input class="btn btn-primary" type="submit" value="Guardar canvis" asp-page-handler="SaveChanges">
