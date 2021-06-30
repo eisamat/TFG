@@ -103,6 +103,7 @@
           <e p="CategoryDto.cs" t="Include" />
           <e p="CreateCategoryModel.cs" t="Include" />
           <e p="EditCategoryModel.cs" t="Include" />
+          <e p="LogAdminViewModel.cs" t="Include" />
           <e p="PatientViewModel.cs" t="Include" />
           <e p="PreviouslyAssignedVideosDto.cs" t="Include" />
           <e p="VideoDto.cs" t="Include" />

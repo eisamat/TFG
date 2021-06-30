@@ -38,7 +38,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D8946065-32D8-412A-9567-09265D2E1C82/8a/33986d0b/TypeAdapterConfig`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/40/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Server/obj/Debug/net5.0/Razor/Pages/Videos/Manage.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Server/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54494287-9CC1-4DEE-B61C-0F4FB47AF640/14/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86B7B18F-4219-4E00-BDA9-F094D1F0F51B/44/SelectListItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC448158-0502-43F0-9371-E0222F9B6053/3/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,11 +59,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Server/Database/Models/Category.cs" />
-      <option value="$PROJECT_DIR$/Server/ViewModels/VideoDto.cs" />
-      <option value="$PROJECT_DIR$/Server/Pages/Patients/DetailsComponent.cshtml" />
-      <option value="$PROJECT_DIR$/Server/Pages/Patients/AssignedVideosComponent.cshtml" />
-      <option value="$PROJECT_DIR$/Server/Pages/Patients/Delete.cshtml" />
       <option value="$PROJECT_DIR$/Server/ViewModels/CategoryDto.cs" />
       <option value="$PROJECT_DIR$/Server/wwwroot/js/site.js" />
       <option value="$PROJECT_DIR$/Server/wwwroot/js/assign_video_scripts.js" />
@@ -89,9 +84,6 @@
       <option value="$PROJECT_DIR$/Server/ViewModels/AddVideoViewModel.cs" />
       <option value="$PROJECT_DIR$/Server/Pages/Videos/AddVideo.cshtml.cs" />
       <option value="$PROJECT_DIR$/Server/Pages/Videos/AddCategory.cshtml" />
-      <option value="$PROJECT_DIR$/Server/appsettings.json" />
-      <option value="$PROJECT_DIR$/Server/Startup.cs" />
-      <option value="$PROJECT_DIR$/Server/appsettings.Development.json" />
       <option value="$PROJECT_DIR$/Server/ViewModels/EditCategoryModel.cs" />
       <option value="$PROJECT_DIR$/Server/Pages/Videos/EditCategory.cshtml" />
       <option value="$PROJECT_DIR$/Server/ViewModels/EditVideoModel.cs" />
@@ -110,6 +102,14 @@
       <option value="$PROJECT_DIR$/Server/Pages/Components/PatientDetails.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Index.cshtml" />
       <option value="$PROJECT_DIR$/Server/Pages/Shared/_Layout.cshtml" />
+      <option value="$PROJECT_DIR$/Server/Startup.cs" />
+      <option value="$PROJECT_DIR$/Site.service" />
+      <option value="$PROJECT_DIR$/Server/Program.cs" />
+      <option value="$PROJECT_DIR$/Server/appsettings.json" />
+      <option value="$PROJECT_DIR$/Server/appsettings.Development.json" />
+      <option value="$PROJECT_DIR$/Server/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/../Dossier/index.html" />
+      <option value="$PROJECT_DIR$/../Dossier/Índex de continguts.html" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
